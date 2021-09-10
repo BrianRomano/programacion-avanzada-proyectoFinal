@@ -3,12 +3,14 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private int documento;
+    private Cuenta cuenta;
 
-    Cliente (String nombre, String apellido, int documento) {
-        this.id = ++id;
+    Cliente(String nombre, String apellido, int documento, Cuenta cuenta) {
+        id++;
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
+        this.cuenta = cuenta;
     }
 
     public static int getId() {
@@ -39,8 +41,12 @@ public class Cliente {
         this.documento = documento;
     }
 
+    public Cuenta getCuenta() { return cuenta; }
+
+    public void setCuenta(Cuenta cuenta) { this.cuenta = cuenta; }
+
     @Override
     public String toString() {
-        return "Nombre: " + nombre + "\nApellido: " + apellido + "\nDocumento: " + documento;
+        return "Nombre: " + nombre + "\nApellido: " + apellido + "\nDocumento: " + documento + "\n" + cuenta;
     }
 }

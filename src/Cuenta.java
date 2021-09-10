@@ -1,10 +1,9 @@
-public class Cuenta extends Cliente{
+public class Cuenta {
     private int numeroDeCuenta;
     private int numeroDeIdentificacionPersonal;
     private double saldoEnCuenta;
 
-    Cuenta (String nombre, String apellido, int documento, int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
-        super(nombre, apellido, documento);
+    Cuenta(int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
         this.numeroDeCuenta = numeroDeCuenta;
         this.numeroDeIdentificacionPersonal = numeroDeIdentificacionPersonal;
         this.saldoEnCuenta = saldoEnCuenta;
@@ -35,5 +34,7 @@ public class Cuenta extends Cliente{
     }
 
     @Override
-    public String toString() { return "Numero de cuenta: " + numeroDeCuenta + "\nNumero de identificacion personal: " + numeroDeIdentificacionPersonal + "\nSaldo en cuenta:" + saldoEnCuenta; }
+    public String toString() {
+        return "Numero de cuenta: " + numeroDeCuenta + "\nNumero de identificacion personal: " + numeroDeIdentificacionPersonal + "\nSaldo en cuenta:" + saldoEnCuenta;
+    }
 }

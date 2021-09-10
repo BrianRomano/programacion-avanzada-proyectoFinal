@@ -1,11 +1,4 @@
 public class BaseDeDatos {
-    private Cuenta[] cuentas;
-
-    public Cuenta[] getCuentas() {
-        return cuentas;
-    }
-
-    public void setCuentas(Cuenta[] cuentas) {
-        this.cuentas = cuentas;
-    }
+    Cuenta cuenta = new Cuenta(123, 123, 0.0);
+    Cliente cliente = new Cliente("Brian", "romano", 123, cuenta);
 }
