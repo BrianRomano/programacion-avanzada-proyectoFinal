@@ -1,17 +1,13 @@
-import java.util.ArrayList;
-
 public class Banco {
-    private ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+    // VARIABLES
     private ATM atm;
 
-    public ArrayList<Cliente> getClientes() {
-        return clientes;
+    // CONSTRUCTOR ATM
+    Banco(ATM atm) {
+        this.atm = atm;
     }
 
-    public void setClientes(ArrayList<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-
+    // GETTERS & SETTERS
     public ATM getAtm() {
         return atm;
     }

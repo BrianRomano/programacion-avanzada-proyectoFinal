@@ -1,14 +1,18 @@
-public class Cuenta {
+public class Cuenta extends Cliente{
+    // VARIABLES
     private int numeroDeCuenta;
     private int numeroDeIdentificacionPersonal;
     private double saldoEnCuenta;
 
-    Cuenta(int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
+    // CONSTRUCTOR
+    Cuenta (String nombre, String apellido, int documento, int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
+        super(nombre, apellido, documento);
         this.numeroDeCuenta = numeroDeCuenta;
         this.numeroDeIdentificacionPersonal = numeroDeIdentificacionPersonal;
         this.saldoEnCuenta = saldoEnCuenta;
     }
 
+    // GETTERS & SETTERS
     public int getNumeroDeCuenta() {
         return numeroDeCuenta;
     }
