@@ -1,15 +1,33 @@
-import java.util.ArrayList;
-
 public class ATM {
     // VARIABLES
+    private Pantalla pantalla;
+    private Teclado teclado;
     private double dineroEnATM = 0.0;
-    public ArrayList<Cuenta> Cuentas = new ArrayList<Cuenta>();
 
     // CONSTRUCTOR
     ATM() {
+        pantalla = new Pantalla();
+        teclado = new Teclado();
     }
 
     // GETTERS & SETTERS
+
+    public Pantalla getPantalla() {
+        return pantalla;
+    }
+
+    public void setPantalla(Pantalla pantalla) {
+        this.pantalla = pantalla;
+    }
+
+    public Teclado getTeclado() {
+        return teclado;
+    }
+
+    public void setTeclado(Teclado teclado) {
+        this.teclado = teclado;
+    }
+
     public double getDineroEnATM() {
         return dineroEnATM;
     }
@@ -20,21 +38,12 @@ public class ATM {
 
     // AUTENTICAR USUARIO
     public boolean autenticarUsuario(int numeroDeCuenta, int numeroDeIdentificacionPersonal) {
-        for (Cuenta cuenta : Cuentas) {
-            if (cuenta.getNumeroDeCuenta() == numeroDeCuenta && cuenta.getNumeroDeIdentificacionPersonal() == numeroDeIdentificacionPersonal) {
-                System.out.println("Bienvenido " + cuenta.getNombre() + " " + cuenta.getApellido());
-                return true;
-            } else {
-                System.out.println("!ERROR. Por favor ingrese un numero de cuenta o nip valido.");
-                System.out.println("____________________________________________________________________________");
-                return false;
-            }
-        }
-        return false;
+        System.out.println("AUTENTICAR USUARIO");
+        return true;
     }
 
     // CONSULTAR SALDO
-    public double consultarSaldo(int numeroDeCuenta, int numeroDeIdentificacionPersonal) {
+    public double consultarSaldo() {
         System.out.println("CONSULTAR SALDO");
         return 1.1;
     }
@@ -49,11 +58,5 @@ public class ATM {
     public double depositarDinero(int numeroDeCuenta, int numeroDeIdentificacionPersonal, double dineroARetirar) {
         System.out.println("DEPOSITAR SALDO");
         return 1.1;
-    }
-
-    // DISPENSAR EFECTIVO EN EL ATM
-    public boolean ingresarEfectivoEnATM(int cantidadBilletes, int billete) {
-        setDineroEnATM(getDineroEnATM() + (cantidadBilletes * billete));
-        return true;
     }
 }

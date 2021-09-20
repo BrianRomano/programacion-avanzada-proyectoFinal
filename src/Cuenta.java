@@ -1,12 +1,11 @@
-public class Cuenta extends Cliente{
+public class Cuenta{
     // VARIABLES
     private int numeroDeCuenta;
     private int numeroDeIdentificacionPersonal;
     private double saldoEnCuenta;
 
     // CONSTRUCTOR
-    Cuenta (String nombre, String apellido, int documento, int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
-        super(nombre, apellido, documento);
+    Cuenta (int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
         this.numeroDeCuenta = numeroDeCuenta;
         this.numeroDeIdentificacionPersonal = numeroDeIdentificacionPersonal;
         this.saldoEnCuenta = saldoEnCuenta;

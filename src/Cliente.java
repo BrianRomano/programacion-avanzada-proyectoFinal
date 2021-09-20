@@ -1,23 +1,19 @@
 public class Cliente {
     // VARIABLES
-    private static int id;
     private String nombre;
     private String apellido;
     private int documento;
+    private Cuenta Cuenta;
 
     // CONSTRUCTOR
-    Cliente(String nombre, String apellido, int documento) {
-        id++;
+    Cliente(String nombre, String apellido, int documento, Cuenta Cuenta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
+        this.Cuenta = Cuenta;
     }
 
     // GETTERS & SETTERS
-    public static int getId() {
-        return id;
-    }
-
     public String getNombre() {
         return nombre;
     }
@@ -42,8 +38,16 @@ public class Cliente {
         this.documento = documento;
     }
 
+    public Cuenta getCuenta() {
+        return Cuenta;
+    }
+
+    public void setCuenta(Cuenta Cuenta) {
+        this.Cuenta = Cuenta;
+    }
+
     @Override
     public String toString() {
-        return "Nombre: " + nombre + "\nApellido: " + apellido + "\nDocumento: " + documento;
+        return "\n\nNombre: " + nombre + "\nApellido: " + apellido + "\nDocumento: " + documento + "\n" + Cuenta;
     }
 }
