@@ -22,10 +22,6 @@ public class Cuenta{
         this.numeroDeCuenta = numeroDeCuenta;
     }
 
-    public Saldo getSaldoEnCuenta() {
-        return saldoEnCuenta;
-    }
-
     // CONSULTAR SALDO DE CUENTA
     public double consultarSaldo(){
         return saldoEnCuenta.getSaldo();
@@ -33,11 +29,23 @@ public class Cuenta{
 
     // RETIRAR DINERO DE CUENTA
     public boolean retirarDinero(double monto) {
-        return true;
+        if(retiro.retirarDinero(consultarSaldo(), monto) > 0.0){
+           saldoEnCuenta.setSaldo(retiro.retirarDinero(consultarSaldo(), monto));
+        }
+        return false;
     }
 
     // DEPOSITAR DINERO EN CUENTA
     public boolean depositarDinero(double monto) {
-        return true;
+        if(deposito.depositarDinero(consultarSaldo(), monto) > 0.0) {
+            saldoEnCuenta.setSaldo(deposito.depositarDinero(consultarSaldo(), monto));
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "Numero de cuenta: " + numeroDeCuenta + saldoEnCuenta;
     }
 }

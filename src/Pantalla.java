@@ -25,6 +25,15 @@ public class Pantalla {
         System.out.println("____________________________________________________________________________");
     }
 
+    public void mensajeErrorAlAutenticar () {
+        System.out.println("!ERROR. El cliente ingresado no existe o es erroneo");
+        System.out.println("____________________________________________________________________________");
+    }
+
+    public void mensajeBienvenidaClienteAutenticado(String nombre, String apellido) {
+        System.out.println("***** BIENVENIDO " + nombre.toUpperCase() + " " + apellido.toUpperCase() + " *****");
+    }
+
     public void menuPrincipal() {
         System.out.println("***** Menu Principal *****");
         System.out.println("1. Consultar saldo");

@@ -3,6 +3,9 @@ public class Test {
         // OBJETO ATM
         ATM atm = new ATM();
 
+        // INICIAR LOS CLIENTES EN BANCO
+        clientesEnBanco(atm.getBanco());
+
         // VARIABLES PARA GUARDAR DATOS DEL USUARIO A INGRESAR
         int numeroDeCuenta;
         int numeroDeIdentificacionPersonal;
@@ -24,7 +27,7 @@ public class Test {
                 if (numeroDeCuenta >= 10000 && numeroDeCuenta <= 99999) {
                     numeroDeCuentaValido = true;
                 } else {
-                   atm.getPantalla().mensajeErrorNumeroDeCuenta();
+                    atm.getPantalla().mensajeErrorNumeroDeCuenta();
                 }
             } while (!numeroDeCuentaValido);
 
@@ -63,23 +66,35 @@ public class Test {
                 case 2 -> {
                     atm.getPantalla().mensajeDineroARetirar();
                     double dineroARetirar = atm.getTeclado().numeroDouble();
-                    atm.retirarDinero(numeroDeCuenta, numeroDeIdentificacionPersonal, dineroARetirar);
+                    atm.retirarDinero(dineroARetirar);
                 }
                 case 3 -> {
                     atm.getPantalla().mensajeDineroADepositar();
                     double dineroADepositar = atm.getTeclado().numeroDouble();
-                    atm.depositarDinero(numeroDeCuenta, numeroDeIdentificacionPersonal, dineroADepositar);
+                    atm.depositarDinero(dineroADepositar);
                 }
                 case 4 -> atm.getPantalla().mensajeDeDespedida();
                 default -> atm.getPantalla().errorMenu();
             }
-
         } while (opcion != 4);
-
     }
 
     // INICIAR CLIENTES Y SUS CUENTAS
-    private static void clientesEnBanco (Banco banco) {
+    private static void clientesEnBanco(Banco banco) {
+        // VALORES DE CLIENTES
+        String[] nombre = {"Brian", "Lionel", "Carlos"};
+        String[] apellido = {"Romano", "Messi", "Tevez"};
+        int[] NIP = {12345, 54321, 56789};
+        int[] numeroDeCuenta = {12345, 54321, 56789};
+        double[] saldoEnCuenta = {10000.00, 1000000.00, 100000.00};
 
+        // CONTADOR DE CLIENTES E INDEX DE CADA UNO
+        int contador = 0;
+
+        // CREAR LOS NUEVOS CLIENTES EN EL BANCO
+        do {
+            banco.nuevoCliente(nombre[contador], apellido[contador], NIP[contador], numeroDeCuenta[contador], saldoEnCuenta[contador]);
+            contador++;
+        } while (contador != nombre.length);
     }
 }

@@ -19,6 +19,5 @@ public class Banco {
     public void nuevoCliente(String nombre, String apellido, int NIP, int numeroDeCuenta, double saldo) {
         int i = cantidadDeClientes++;
         cliente[i] = new Cliente(nombre, apellido, NIP, numeroDeCuenta, saldo);
-
     }
 }

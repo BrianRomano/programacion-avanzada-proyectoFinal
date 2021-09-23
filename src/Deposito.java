@@ -1,7 +1,7 @@
 public class Deposito {
-    Deposito () {}
+    public Deposito () {}
 
-    public double depositar(double monto) {
-        return 1.1;
+    public double depositarDinero(double saldo, double monto) {
+        return saldo + monto;
     }
 }
