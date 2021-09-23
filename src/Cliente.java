@@ -2,15 +2,15 @@ public class Cliente {
     // VARIABLES
     private String nombre;
     private String apellido;
-    private int documento;
+    private int NIP;
     private Cuenta Cuenta;
 
     // CONSTRUCTOR
-    Cliente(String nombre, String apellido, int documento, Cuenta Cuenta) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.documento = documento;
-        this.Cuenta = Cuenta;
+    Cliente(String nombre, String apellido, int NIP, int numeroDeCuenta, double saldo) {
+        setNombre(nombre);
+        setApellido(apellido);
+        setNIP(NIP);
+        setCuenta(numeroDeCuenta, saldo);
     }
 
     // GETTERS & SETTERS
@@ -30,24 +30,24 @@ public class Cliente {
         this.apellido = apellido;
     }
 
-    public int getDocumento() {
-        return documento;
+    public int getNIP() {
+        return NIP;
     }
 
-    public void setDocumento(int documento) {
-        this.documento = documento;
+    public void setNIP(int NIP) {
+        this.NIP = NIP;
     }
 
     public Cuenta getCuenta() {
         return Cuenta;
     }
 
-    public void setCuenta(Cuenta Cuenta) {
-        this.Cuenta = Cuenta;
+    public void setCuenta(int numeroDeCuenta, double saldo) {
+        this.Cuenta = new Cuenta(numeroDeCuenta, saldo);
     }
 
     @Override
     public String toString() {
-        return "\n\nNombre: " + nombre + "\nApellido: " + apellido + "\nDocumento: " + documento + "\n" + Cuenta;
+        return "\n\nNombre: " + nombre + "\nApellido: " + apellido + "\nNIP: " + NIP + "\n" + Cuenta;
     }
 }

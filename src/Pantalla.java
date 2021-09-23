@@ -47,7 +47,7 @@ public class Pantalla {
     }
 
     public void mensajeDeDespedida() {
-        System.out.println("Muchas gracias. Vuelva pronto.");
+        System.out.println("Muchas gracias. Vuelva pronto");
     }
 
     public void errorMenu() {

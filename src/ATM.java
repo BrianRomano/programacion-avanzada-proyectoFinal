@@ -2,7 +2,6 @@ public class ATM {
     // VARIABLES
     private Pantalla pantalla;
     private Teclado teclado;
-    private double dineroEnATM = 0.0;
 
     // CONSTRUCTOR
     ATM() {
@@ -26,14 +25,6 @@ public class ATM {
 
     public void setTeclado(Teclado teclado) {
         this.teclado = teclado;
-    }
-
-    public double getDineroEnATM() {
-        return dineroEnATM;
-    }
-
-    public void setDineroEnATM(double dineroEnATM) {
-        this.dineroEnATM = dineroEnATM;
     }
 
     // AUTENTICAR USUARIO

@@ -1,14 +1,16 @@
 public class Cuenta{
     // VARIABLES
     private int numeroDeCuenta;
-    private int numeroDeIdentificacionPersonal;
-    private double saldoEnCuenta;
+    private Saldo saldoEnCuenta;
+    private Retiro retiro;
+    private Deposito deposito;
 
     // CONSTRUCTOR
-    Cuenta (int numeroDeCuenta, int numeroDeIdentificacionPersonal, double saldoEnCuenta) {
-        this.numeroDeCuenta = numeroDeCuenta;
-        this.numeroDeIdentificacionPersonal = numeroDeIdentificacionPersonal;
-        this.saldoEnCuenta = saldoEnCuenta;
+    Cuenta (int numeroDeCuenta, double saldoEnCuenta) {
+        setNumeroDeCuenta(numeroDeCuenta);
+        this.saldoEnCuenta = new Saldo(saldoEnCuenta);
+        retiro = new Retiro();
+        deposito = new Deposito();
     }
 
     // GETTERS & SETTERS
@@ -20,24 +22,22 @@ public class Cuenta{
         this.numeroDeCuenta = numeroDeCuenta;
     }
 
-    public int getNumeroDeIdentificacionPersonal() {
-        return numeroDeIdentificacionPersonal;
-    }
-
-    public void setNumeroDeIdentificacionPersonal(int numeroDeIdentificacionPersonal) {
-        this.numeroDeIdentificacionPersonal = numeroDeIdentificacionPersonal;
-    }
-
-    public double getSaldoEnCuenta() {
+    public Saldo getSaldoEnCuenta() {
         return saldoEnCuenta;
     }
 
-    public void setSaldoEnCuenta(double saldoEnCuenta) {
-        this.saldoEnCuenta = saldoEnCuenta;
+    // CONSULTAR SALDO DE CUENTA
+    public double consultarSaldo(){
+        return saldoEnCuenta.getSaldo();
     }
 
-    @Override
-    public String toString() {
-        return "Numero de cuenta: " + numeroDeCuenta + "\nNumero de identificacion personal: " + numeroDeIdentificacionPersonal + "\nSaldo en cuenta:" + saldoEnCuenta;
+    // RETIRAR DINERO DE CUENTA
+    public boolean retirarDinero(double monto) {
+        return true;
+    }
+
+    // DEPOSITAR DINERO EN CUENTA
+    public boolean depositarDinero(double monto) {
+        return true;
     }
 }

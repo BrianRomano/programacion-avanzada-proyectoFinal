@@ -59,26 +59,27 @@ public class Test {
             opcion = atm.getTeclado().numeroInt();
 
             switch (opcion) {
-                case 1:
-                    atm.getPantalla().mensajeConsultaDeSaldo(atm.consultarSaldo());
-                    break;
-                case 2:
+                case 1 -> atm.getPantalla().mensajeConsultaDeSaldo(atm.consultarSaldo());
+                case 2 -> {
                     atm.getPantalla().mensajeDineroARetirar();
                     double dineroARetirar = atm.getTeclado().numeroDouble();
                     atm.retirarDinero(numeroDeCuenta, numeroDeIdentificacionPersonal, dineroARetirar);
-                    break;
-                case 3:
-                    atm.getPantalla().mensajeDineroARetirar();
+                }
+                case 3 -> {
+                    atm.getPantalla().mensajeDineroADepositar();
                     double dineroADepositar = atm.getTeclado().numeroDouble();
                     atm.depositarDinero(numeroDeCuenta, numeroDeIdentificacionPersonal, dineroADepositar);
-                    break;
-                case 4:
-                    atm.getPantalla().mensajeDeDespedida();
-                    break;
-                default:
-                   atm.getPantalla().errorMenu();
+                }
+                case 4 -> atm.getPantalla().mensajeDeDespedida();
+                default -> atm.getPantalla().errorMenu();
             }
 
         } while (opcion != 4);
+
+    }
+
+    // INICIAR CLIENTES Y SUS CUENTAS
+    private static void clientesEnBanco (Banco banco) {
+
     }
 }
