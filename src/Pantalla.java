@@ -8,12 +8,11 @@ public class Pantalla {
     }
 
     public void mensajeNumeroDeCuenta() {
-        System.out.print("# Por favor introduzca su numero de cuenta: ");
+        System.out.print("\n# Por favor introduzca su numero de cuenta: ");
     }
 
     public void mensajeErrorNumeroDeCuenta() {
-        System.out.println("!ERROR. Por favor ingrese un numero de cuenta valido.");
-        System.out.println("____________________________________________________________________________");
+        System.out.println("\n!ERROR. Por favor ingrese un numero de cuenta valido\n");
     }
 
     public void mensajeNumeroDeIdentificacionPersonal() {
@@ -21,26 +20,24 @@ public class Pantalla {
     }
 
     public void mensajeErrorNumeroDeIdentificacionPersonal() {
-        System.out.println("!ERROR. Por favor ingrese un numero de identificacion personal valido.");
-        System.out.println("____________________________________________________________________________");
+        System.out.println("\n!ERROR. Por favor ingrese un numero de identificacion personal valido\n");
     }
 
     public void mensajeErrorAlAutenticar () {
         System.out.println("!ERROR. El cliente ingresado no existe o es erroneo");
-        System.out.println("____________________________________________________________________________");
     }
 
     public void mensajeBienvenidaClienteAutenticado(String nombre, String apellido) {
-        System.out.println("***** BIENVENIDO " + nombre.toUpperCase() + " " + apellido.toUpperCase() + " *****");
+        System.out.println("\n***** BIENVENIDO " + nombre.toUpperCase() + " " + apellido.toUpperCase() + " *****");
     }
 
     public void menuPrincipal() {
-        System.out.println("***** Menu Principal *****");
+        System.out.println("\nMENU PRINCIPAL");
         System.out.println("1. Consultar saldo");
         System.out.println("2. Retirar efectivo");
         System.out.println("3. Depositar efectivo");
         System.out.println("4. Salir");
-        System.out.print("# Elija una opcion: ");
+        System.out.print("\n# Elija una opcion: ");
     }
 
     public void mensajeConsultaDeSaldo(double saldo) {
@@ -60,7 +57,6 @@ public class Pantalla {
     }
 
     public void errorMenu() {
-        System.out.println("!ERROR. Ingrese una opcion correcta.");
-        System.out.println("____________________________________________________________________________");
+        System.out.println("\n!ERROR. Ingrese una opcion correcta\n");
     }
 }

@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Teclado {
     private final Scanner scanner;
@@ -8,10 +8,34 @@ public class Teclado {
     }
 
     public int numeroInt(){
-        return scanner.nextInt();
+        int ingreso = 0;
+        boolean tipoDeDatoCorrecto = false;
+        do {
+            try{
+                ingreso = scanner.nextInt();
+                tipoDeDatoCorrecto = true;
+            } catch(InputMismatchException e){
+                System.out.println("\n!ERROR. Ingrese un valor valido");
+                scanner.nextLine();
+            }
+        } while (!tipoDeDatoCorrecto);
+
+        return ingreso;
     }
 
     public double numeroDouble(){
-        return scanner.nextDouble();
+        double ingreso = 0.0;
+        boolean tipoDeDatoCorrecto = false;
+        do {
+            try {
+                ingreso = scanner.nextDouble();
+                tipoDeDatoCorrecto = true;
+            } catch (InputMismatchException e) {
+                System.out.println("\n!ERROR. Ingrese un valor valido");
+                scanner.nextLine();
+            }
+        } while (!tipoDeDatoCorrecto);
+
+        return ingreso;
     }
 }

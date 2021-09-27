@@ -23,7 +23,6 @@ public class Test {
             do {
                 atm.getPantalla().mensajeNumeroDeCuenta();
                 numeroDeCuenta = atm.getTeclado().numeroInt();
-                System.out.println("____________________________________________________________________________");
                 if (numeroDeCuenta >= 10000 && numeroDeCuenta <= 99999) {
                     numeroDeCuentaValido = true;
                 } else {
@@ -37,7 +36,6 @@ public class Test {
             do {
                 atm.getPantalla().mensajeNumeroDeIdentificacionPersonal();
                 numeroDeIdentificacionPersonal = atm.getTeclado().numeroInt();
-                System.out.println("____________________________________________________________________________");
                 if (numeroDeIdentificacionPersonal >= 10000 && numeroDeIdentificacionPersonal <= 99999) {
                     numeroDeIdentificacionPersonalValido = true;
                 } else {
