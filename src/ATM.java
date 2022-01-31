@@ -1,10 +1,10 @@
 public class ATM {
     // VARIABLES
-    private Banco banco;
-    private Pantalla pantalla;
-    private Teclado teclado;
+    private final Pantalla pantalla;
+    private final Teclado teclado;
+    private final Dispensador dispensador;
+    private final Banco banco;
     private Cliente cliente;
-    private Dispensador dispensador;
 
     // CONSTRUCTOR
     ATM() {
@@ -14,7 +14,7 @@ public class ATM {
         dispensador = new Dispensador();
     }
 
-    // GETTERS & SETTERS
+    // GETTERS
     public Banco getBanco() {
         return banco;
     }
@@ -41,7 +41,7 @@ public class ATM {
                 if (cliente.getNIP() == numeroDeIdentificacionPersonal) {
                     // ASIGNAR CLIENTE
                     this.cliente = cliente;
-                    // MOSTRAR MENSAJE DE BIENVENIDA
+                    // MOSTRAR MENSAJE DE BIENVENIDA AL CLIENTE
                     getPantalla().mensajeBienvenidaClienteAutenticado(cliente.getNombre(), cliente.getApellido());
                     return true;
                 } else {
@@ -63,16 +63,27 @@ public class ATM {
 
     // RETIRAR DINERO
     public boolean retirarDinero(double monto) {
+        if (monto > getDispensador().cantidadDeDinero()) {
+            getPantalla().mensajeDineroNoDisponible();
+            return false;
+        }
         if (this.cliente.getCuenta().retirarDinero(monto)) {
             getDispensador().retirarDinero(monto);
+            getPantalla().dineroRetirado(monto);
             return true;
         }
+        getPantalla().mensajeDineroNoSuficiente();
         return false;
     }
 
     // DEPOSITAR DINERO
     public boolean depositarDinero(double monto) {
+        if (monto <= 0.0) {
+            getPantalla().mensajeErrorDepositoNoPermitido();
+            return false;
+        }
         this.cliente.getCuenta().depositarDinero(monto);
-        return false;
+        getPantalla().dineroDepositado(monto);
+        return true;
     }
 }

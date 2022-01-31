@@ -3,14 +3,14 @@ public class Test {
         // OBJETO ATM
         ATM atm = new ATM();
 
-        // INICIAR LOS CLIENTES EN BANCO
+        // INICIAR DATOS DE LOS CLIENTES REGISTRADOS
         clientesEnBanco(atm.getBanco());
 
         // VARIABLES PARA GUARDAR DATOS DEL USUARIO A INGRESAR
         int numeroDeCuenta;
         int numeroDeIdentificacionPersonal;
 
-        // VARIABLE BANDERA PARA VALIDAR LA CORRECTA AUTENTICACION DEL USUARIO
+        // BANDERA PARA VALIDAR LA CORRECTA AUTENTICACION DEL USUARIO
         boolean usuarioAutenticado = false;
 
         // MOSTRAR MENSAJE DE BIENVENIDA AL USUARIO
@@ -30,7 +30,7 @@ public class Test {
                 }
             } while (!numeroDeCuentaValido);
 
-            // VARIABLE BANDERA PARA VALIDAR EL CORRECTO INGRESO DE DATOS
+            // BANDERA PARA VALIDAR EL CORRECTO INGRESO DE DATOS
             boolean numeroDeIdentificacionPersonalValido = false;
 
             do {
@@ -79,12 +79,12 @@ public class Test {
 
     // INICIAR CLIENTES Y SUS CUENTAS
     private static void clientesEnBanco(Banco banco) {
-        // VALORES DE CLIENTES
+        // DATOS DE CLIENTES
         String[] nombre = {"Brian", "Lionel", "Carlos"};
         String[] apellido = {"Romano", "Messi", "Tevez"};
         int[] NIP = {12345, 54321, 56789};
         int[] numeroDeCuenta = {12345, 54321, 56789};
-        double[] saldoEnCuenta = {10000.00, 1000000.00, 100000.00};
+        double[] saldoEnCuenta = {5000.00, 15000.00, 10000.00};
 
         // CONTADOR DE CLIENTES E INDEX DE CADA UNO
         int contador = 0;

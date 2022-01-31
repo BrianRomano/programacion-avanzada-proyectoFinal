@@ -1,6 +1,6 @@
 public class Banco {
 
-    private Cliente[] cliente;
+    private final Cliente[] cliente;
     private int cantidadDeClientes;
 
     Banco() {
